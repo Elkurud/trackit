@@ -52,7 +52,7 @@ export default function Today() {
 
         
         <Frame>
-            <Title data-test="today" >{weekDays[dayjs().day()].name}, {dayjs().date()}/{dayjs().month() < 10 ? 0 : ""}{dayjs().month()} </Title>
+            <Title data-test="today" >{weekDays[dayjs().day()].name}, {dayjs().date()}/{(dayjs().month() + 1) < 10 ? 0 : ""}{dayjs().month() + 1} </Title>
             <Conclusion data-test="today-counter" concluded={percentage} >
 
                 {percentage === 0 ? "Nenhum hábito concluído ainda" : `${percentage}% dos hábitos concluídos`}
