@@ -7,7 +7,7 @@ import check from "../assets/check.svg"
 
 export default function HabitCard({ currentSequence, done, habitRequest, highestSequence, id, name }) {
 
-    const { user } = useContext(UserContext)
+    const { userData } = useContext(UserContext)
 
     const coloring = {
 
@@ -18,11 +18,11 @@ export default function HabitCard({ currentSequence, done, habitRequest, highest
     function checkers() {
 
         done ? (
-            apiToday.uncheck(user.token, id)
+            apiToday.uncheck(userData.token, id)
                 .then(() => habitRequest())
                 .catch((err) => alert(err.response.data.message))
         ) : (
-            apiToday.check(user.token, id)
+            apiToday.check(userData.token, id)
                 .then(() => habitRequest())
                 .catch((err) => alert(err.response.data.message))
         )
@@ -40,7 +40,7 @@ export default function HabitCard({ currentSequence, done, habitRequest, highest
                     
             </Sequences>
 
-            <CheckMark done={done} onClick={checkers} >
+            <CheckMark done={done} onClick={() => {checkers(); console.log('click')}} >
                 <img src={check} alt=""/>
             </CheckMark>
 

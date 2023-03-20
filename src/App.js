@@ -7,6 +7,7 @@ import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import Today from "./components/Today";
 import Habit from "./components/Habit";
+import History from "./components/History";
 
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/cadastro" element={<SignUp />} />
           <Route path="/hoje" element={<Today />} />
           <Route path="/habitos" element={<Habit />} />
+          <Route path="/historico" element={<History />} />
         </Routes>
       </Global>
     </UserContext.Provider>
