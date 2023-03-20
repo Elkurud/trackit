@@ -12,11 +12,12 @@ import Today from "./components/Today";
 function App() {
   
   const [userData, setUserData] = React.useState({})
+  const [percentage, setPercentage] = React.useState(0)
 
   return (
 
   <BrowserRouter>
-    <UserContext.Provider value={{ userData, setUserData }}>
+    <UserContext.Provider value={{ userData, setUserData, percentage, setPercentage }}>
       <GlobalStyle/>
       <Global>
         <Routes>
