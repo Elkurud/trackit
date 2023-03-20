@@ -25,10 +25,10 @@ export default function EditCard({ id, name, days, habitListRequest }) {
     }
 
     return (
-        <Container>
-            <Title>{name}</Title>
-            <WeekDays selectedDays={days} />
-            <img src={trashCan} onClick={deleteCard} alt="" />
+        <Container data-test="habit-container" >
+            <Title data-test="habit-name" >{name}</Title>
+            <WeekDays selectedDays={days} data-test="habit-day" />
+            <img src={trashCan} onClick={deleteCard} alt="" data-test="habit-delete-btn" />
         </Container>
     )
 }

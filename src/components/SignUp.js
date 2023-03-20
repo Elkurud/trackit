@@ -44,6 +44,7 @@ export default function SignIn() {
             <Logo src={logo}/>
             <StyledForm onSubmit={submit}>
                 <StyledInput
+                    data-test="email-input"
                     placeholder='email'
                     type='email'
                     name='email'
@@ -53,6 +54,7 @@ export default function SignIn() {
                     required
                 />
                 <StyledInput
+                    data-test="password-input"
                     placeholder='senha'
                     type='password'
                     name='password'
@@ -62,6 +64,7 @@ export default function SignIn() {
                     required
                 />
                 <StyledInput
+                    data-test="user-name-input"
                     placeholder='nome'
                     type='text'
                     name='name'
@@ -71,6 +74,7 @@ export default function SignIn() {
                     required
                 />
                 <StyledInput
+                    data-test="user-image-input"
                     placeholder='foto'
                     type='url'
                     name='image'
@@ -79,13 +83,13 @@ export default function SignIn() {
                     onChange={inputChange}
                     required
                 />
-                <StyledButton type='submit' disabled={onOff}>
+                <StyledButton type='submit' disabled={onOff} data-test="signup-btn" >
                     {onOff ? (
                         <ThreeDots width={50} height={50} color="#ffffff" />
                     ) : 'Cadastrar'}
                 </StyledButton>
             </StyledForm>
-            <Link to={"/"}>
+            <Link to={"/"} data-test="login-link" >
                 Já tem uma conta? Faça login!
             </Link>
         </Tela>

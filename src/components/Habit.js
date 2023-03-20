@@ -45,7 +45,6 @@ export default function Habit() {
             .then(res => {
                 setOnOff(false)
                 setHabits(res.data)
-                habitRequest()
             })
             .catch(err => {
                 setOnOff(false)
@@ -58,12 +57,13 @@ export default function Habit() {
         <Frame>
             <Container>
                 <Title>Meus hábitos</Title>
-                <Button onClick={() => {setNewHabit(!newHabit)}}>
+                <Button onClick={() => {setNewHabit(!newHabit)}} data-test="habit-create-btn" >
                         <img src={plus} alt="" />
                 </Button>
             </Container>
 
             <NewHabit
+                data-test="habit-create-container"
                 newHabit={newHabit}
                 setNewHabit={setNewHabit}
                 habitListRequest={habitListRequest}

@@ -37,7 +37,7 @@ export default function Today() {
                 setHabits(userHabits)
 
                 const checked = userHabits.filter(f => f.done === true)
-                userHabits > 0 ? (setPercentage((checked.length / userHabits.length) * 100)) : setPercentage(0)
+                userHabits.length > 0 ? (setPercentage((checked.length / userHabits.length) * 100)) : setPercentage(0)
                 setOnOff(false)
 
             })
@@ -52,8 +52,8 @@ export default function Today() {
 
         
         <Frame>
-            <Title>{weekDays[dayjs().day()].name}, {dayjs().date()}/{dayjs().month() < 10 ? 0 : ""}{dayjs().month()} </Title>
-            <Conclusion concluded={percentage} >
+            <Title data-test="today" >{weekDays[dayjs().day()].name}, {dayjs().date()}/{dayjs().month() < 10 ? 0 : ""}{dayjs().month()} </Title>
+            <Conclusion data-test="today-counter" concluded={percentage} >
 
                 {percentage === 0 ? "Nenhum hábito concluído ainda" : `${percentage}% dos hábitos concluídos`}
 
@@ -68,6 +68,7 @@ export default function Today() {
 
                     habits.map(f => (
                         <HabitCard
+                            data-test="today-habit-container"
                             currentSequence={f.currentSequence}
                             done={f.done}
                             habitRequest={habitRequest}

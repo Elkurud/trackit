@@ -40,6 +40,7 @@ export default function NewHabit({ newHabit, setNewHabit, habitListRequest }) {
         <CardData newHabit={newHabit} onSubmit={create} >
             <div>
                 <StyledInput
+                    data-test="habit-name-input"
                     name="name"
                     placeholder="nome do hábito"
                     type="text"
@@ -57,6 +58,7 @@ export default function NewHabit({ newHabit, setNewHabit, habitListRequest }) {
 
             <Buttons>
                 <Cancel
+                    data-test="habit-create-cancel-btn"
                     type="button"
                     disabled={onOff}
                     onClick={() => setNewHabit(false)}
@@ -65,6 +67,7 @@ export default function NewHabit({ newHabit, setNewHabit, habitListRequest }) {
                 </Cancel>
 
                 <Save
+                    data-test="habit-create-save-btn"
                     type="submit"
                     disabled={onOff}
                 >

@@ -47,6 +47,7 @@ export default function SignIn() {
             <Logo src={logo}/>
             <StyledForm onSubmit={submit}>
                 <StyledInput
+                    data-test="email-input"
                     placeholder='email'
                     type='email'
                     name='email'
@@ -56,6 +57,7 @@ export default function SignIn() {
                     required
                 />
                 <StyledInput
+                    data-test="password-input"
                     placeholder='password'
                     type='password'
                     name='password'
@@ -64,13 +66,13 @@ export default function SignIn() {
                     onChange={inputChange}
                     required
                 />
-                <StyledButton type='submit' disabled={onOff}>
+                <StyledButton type='submit' disabled={onOff} data-test="login-btn" >
                     {onOff ? (
                         <ThreeDots width={50} height={50} color="#ffffff" />
                     ) : 'Entrar'}
                 </StyledButton>
             </StyledForm>
-            <Link to={"/cadastro"}>
+            <Link to={"/cadastro"} data-test="signup-link" >
                 Não tem uma conta? Cadastre-se!
             </Link>
         </Tela>

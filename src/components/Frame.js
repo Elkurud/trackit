@@ -5,9 +5,9 @@ import styled from "styled-components"
 export default function Frame({ children }) {
     return (
         <Container>
-            <Header />
+            <Header data-test="header"/>
             {children}
-            <Footer />
+            <Footer data-test="menu" />
         </Container>
     )
 }

@@ -32,15 +32,15 @@ export default function HabitCard({ currentSequence, done, habitRequest, highest
     return(
 
         <Card>
-            <Title>{name}</Title>
+            <Title data-test="today-habit-name" >{name}</Title>
             <Sequences>
 
-                Sequência atual:<p style={coloring} >{currentSequence} dias</p><br/>
-                Seu recorde:<p style={coloring} >{highestSequence} dias</p>
+                Sequência atual:<p style={coloring} data-test="today-habit-sequence" >{currentSequence} dias</p><br/>
+                Seu recorde:<p style={coloring} data-test="today-habit-record" >{highestSequence} dias</p>
                     
             </Sequences>
 
-            <CheckMark done={done} onClick={() => {checkers(); console.log('click')}} >
+            <CheckMark done={done} onClick={() => {checkers()}} data-test="today-habit-check-btn" >
                 <img src={check} alt=""/>
             </CheckMark>
 

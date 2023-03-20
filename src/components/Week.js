@@ -28,6 +28,7 @@ export default function WeekDays({ selectedDays, setSelectedDays, onOff }) {
         <WeekDay onOff={onOff}>
             {weekDays.map(weekDay => (
                 <StyledDay
+                    data-test="habit-day"
                     isSelected={selectedDays.includes(weekDay.id)}
                     onClick={() => handleDay(weekDay.id)}
                     key={weekDay.id}
