@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from "./styles/GlobalStyle";
+import styled from 'styled-components';
+import { Routes, BrowserRouter, Route } from "react-router-dom";
+import React from "react";
+import UserContext from "./contexts/UseContext";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
+import Today from "./components/Today";
+
+
 
 function App() {
+  
+  const [userData, setUserData] = React.useState({})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+  <BrowserRouter>
+    <UserContext.Provider value={{ userData, setUserData }}>
+      <GlobalStyle/>
+      <Global>
+        <Routes>
+          <Route path="/" element={<SignIn />} />
+          <Route path="/cadastro" element={<SignUp />} />
+          <Route path="/hoje" element={<Today />} />
+        </Routes>
+      </Global>
+    </UserContext.Provider>
+  </BrowserRouter>
   );
 }
 
 export default App;
+
+const Global = styled.div`
+
+  width: 375px;
+
+`
